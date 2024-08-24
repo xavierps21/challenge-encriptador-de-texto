@@ -1,0 +1,229 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('./../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf');
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', 'sans-serif';
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+  background-color: #f3f5fc;
+}
+
+.container-input {
+  width: 70%;
+  margin: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-input {
+  flex: 1;
+  resize: none;
+  background-color: transparent;
+  border: none;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.container-output {
+  overflow: auto;
+  width: 30%;
+  background-color: #ffffff;
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+img {
+  width: 100%;
+}
+
+.container-output-empty {
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+.container-output::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.container-output-result {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.text-output {
+  flex: 1;
+  resize: none;
+  background-color: transparent;
+  border: none;
+}
+
+.output-result {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.encrypt-button {
+  background-color: #1a3872;
+  color: #d9dfe8;
+  border: none;
+  border-radius: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.decrypt-button {
+  background-color: #d9dfe8;
+  color: #1a3872;
+  border: none;
+  border-radius: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  padding: 1.5rem;
+  flex: 1;
+}
+
+
+.copy-button {
+  background-color: #d9dfe8;
+  color: #1a3872;
+  border: none;
+  border-radius: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+}
+
+.icon {
+  display: inline-block;
+  background-color: #4a5057;
+  border-radius: 100%;
+  height: 1rem;
+  width: 1rem;
+  text-align: center;
+  color: #ffffff;
+  padding: 0.25rem;
+  margin-right: 1rem;
+}
+
+.alert {
+  background-color: lightcoral;
+  color: white;
+}
+
+.alert-close {
+  width: 100%;
+  text-align: center;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+dialog {
+  animation: fade-out 0.25s ease-out;
+}
+
+dialog[open] {
+  animation: fade-in 0.25s ease-out;
+}
+
+dialog[open]::backdrop {
+  animation: backdrop-fade-in 0.25s ease-out forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+    display: none;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+    display: block;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: scaleY(1);
+    display: block;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scaleY(0);
+    display: none;
+  }
+}
+
+@keyframes backdrop-fade-in {
+  0% {
+    background-color: rgb(0 0 0 / 0%);
+  }
+
+  100% {
+    background-color: rgb(0 0 0 / 25%);
+  }
+}
+
+@media (max-width: 1024px) {
+  img {
+    display: none;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .container-input {
+    flex: 1;
+    width: auto;
+    margin: 1rem;
+    padding: 0;
+  }
+
+  .container-output {
+    width: auto;
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 512px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+}
